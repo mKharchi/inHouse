@@ -211,7 +211,7 @@ const Recommended = ({ sold }) => {
                 <p className='text-md text-center w-full max-w-2xl'>
                     Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.                </p>
             </div>
-                <div className='flex flex-col sm:flex-row items-center justify-between  w-full  ' style={{ scrollbarWidth: 'none' }}>
+                <div className='flex flex-col sm:flex-row items-center justify-between gap-6 w-full  ' style={{ scrollbarWidth: 'none' }}>
                     {sold.map((item, index) => (<SellCard item={item} key={index} />))}
                 </div></>
             }
