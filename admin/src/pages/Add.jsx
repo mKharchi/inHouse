@@ -109,7 +109,7 @@ const Add = ({ token }) => {
             <input 
               value={name} 
               onChange={(e) => setName(e.target.value)} 
-              className='w-full px-3 py-2 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
+              className='w-full px-3 py-2 text-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
               type="text" 
               placeholder="Enter property name"
               required 
@@ -120,7 +120,7 @@ const Add = ({ token }) => {
             <input 
               value={address} 
               onChange={(e) => setAddress(e.target.value)} 
-              className='w-full px-3 py-2 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
+              className='w-full px-3 py-2 text-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
               type="text" 
               placeholder="Enter full address"
               required 
@@ -135,7 +135,7 @@ const Add = ({ token }) => {
             <input 
               value={country} 
               onChange={(e) => setCountry(e.target.value)} 
-              className='w-full px-3 py-2 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
+              className='w-full px-3 py-2 text-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
               type="text" 
               placeholder="Enter country"
               required 
@@ -146,7 +146,7 @@ const Add = ({ token }) => {
             <input 
               value={city} 
               onChange={(e) => setCity(e.target.value)} 
-              className='w-full px-3 py-2 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
+              className='w-full px-3 py-2 text-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
               type="text" 
               placeholder="Enter city"
               required 
@@ -160,7 +160,7 @@ const Add = ({ token }) => {
           <textarea 
             value={description} 
             onChange={(e) => setDescription(e.target.value)} 
-            className='w-full px-3 py-2 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent min-h-[100px] resize-vertical' 
+            className='w-full px-3 py-2 text-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent min-h-[100px] resize-vertical' 
             placeholder="Enter property description"
             required 
           />
@@ -191,7 +191,7 @@ const Add = ({ token }) => {
             <input 
               value={price} 
               onChange={(e) => setPrice(e.target.value)} 
-              className='w-full px-3 py-2 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
+              className='w-full px-3 py-2 text-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
               type="number" 
               min={1}
               placeholder="Enter price"
@@ -208,7 +208,7 @@ const Add = ({ token }) => {
               min={1} 
               value={rooms} 
               onChange={(e) => setRooms(e.target.value)} 
-              className='w-full px-3 py-2 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
+              className='w-full px-3 py-2 text-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
               type="number" 
               placeholder="Number of rooms"
               required 
@@ -221,7 +221,7 @@ const Add = ({ token }) => {
               min={10} 
               value={area} 
               onChange={(e) => setArea(e.target.value)} 
-              className='w-full px-3 py-2 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
+              className='w-full px-3 py-2 text-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
               type="number" 
               placeholder="Area in square meters"
               required 
@@ -234,7 +234,7 @@ const Add = ({ token }) => {
               min={1} 
               value={bathrooms} 
               onChange={(e) => setBathrooms(e.target.value)} 
-              className='w-full px-3 py-2 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
+              className='w-full px-3 py-2 text-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent' 
               type="number" 
               placeholder="Number of bathrooms"
               required 

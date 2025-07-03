@@ -104,7 +104,7 @@ const Collections = () => {
       )}
 
       {/* Products Grid */}
-      <div className='grid grid-cols-1 place-items-center sm:place-items-start sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10'>
+      <div className='grid grid-cols-1 place-items-center sm:place-items-start sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10'>
         {paginatedItems.length > 0 ? (
           paginatedItems.map((item, id) => (
             <ProductItem key={id} item={item} />
