@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+@import "tailwindcss";
+
+.active {
+    background-color: #ffebf5;
+    color: black;
+}
+
+* {
+    font-family: Outfit;
+}
+
+select,
+input,
+textarea {
+    border: 1px solid #c2c2c2;
+    outline-color: #c586a5;
+    border-radius: 4px;
+}
+
+.border {
+    border-color: #c2c2c2;
+}
+
+:root {
+    --primary: #3e000c;
+    --secondary: #f2f0e9;
+    --tertiary: #fff;
+}
+
+@theme inline {
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-tertiary: var(--tertiary);
+}
