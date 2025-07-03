@@ -168,7 +168,7 @@ const SellCard = ({ item }) => {
             <hr className='border hidden sm:flex opacity-40 w-[88%] mx-auto' />
             <div className="flex w-full sm:flex-col px-4 justify-start item-center gap-2">
                 <span className='text-center font-semibold '>Price</span>
-                <span className='sm:text-xl sm:font-semibold'>${item.price}</span>
+                <span className='sm:text-xl sm:text-center sm:font-semibold'>${item.price}</span>
             </div>
             <button
                 className='px-4 sm:text-xl font-semibold mb-4 py-2 sm:w-1/3 mt-2 text-tertiary bg-primary rounded-xl hover:text-primary hover:bg-secondary transition-all duration-300'>

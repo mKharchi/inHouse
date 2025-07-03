@@ -43,7 +43,7 @@ const ProductItem = ({ item }) => {
             {/* Price */}
             <div className="flex w-full sm:flex-col px-4 justify-start item-center gap-2">
                 <span className='text-center font-semibold '>Price:</span>
-                <span className='sm:text-xl sm:font-semibold'>${item.price}</span>
+                <span className='sm:text-xl sm:text-center sm:font-semibold'>${item.price}</span>
             </div>
 
             {/* Button */}
