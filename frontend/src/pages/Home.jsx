@@ -241,7 +241,7 @@ const SellCard = ({ item }) => {
             </div>
 
             <button
-                onClick={() => navigate(`/property/${item.id}`)}
+                onClick={() => navigate(`/property/${item._id}`)}
                 className='px-4 fade-up-1 opacity-0 -translate-y-10 py-2 text-sm md:text-base font-semibold mb-4 mt-2 text-tertiary bg-primary rounded-xl hover:text-primary hover:bg-secondary transition-all duration-300 w-3/4 md:w-1/2 lg:w-1/3'>
                 See more
             </button>
