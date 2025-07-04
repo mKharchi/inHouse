@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { BiPhone } from 'react-icons/bi'
 import { BsPinMap } from 'react-icons/bs'
 import { CiMenuBurger } from 'react-icons/ci'
@@ -7,76 +7,150 @@ import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     const [shown, setShown] = useState(false)
-    const links = [{
+    const menuRef = useRef(null)
+    
+    const links = [
+        {
+            icon: (<FaGithub size={20} className="w-5 h-5" />),
+            link: "https://github.com/mKharchi",
+        }, 
+        {
+            icon: (<FaLinkedin size={20} className="w-5 h-5" />),
+            link: "https://www.linkedin.com/in/kharchi-merouane-32080a30b/",
+        }, 
+        {
+            icon: (<FaWhatsapp size={20} className="w-5 h-5" />),
+            link: "http://wa.me/+213795736069",
+        }
+    ]
 
-        icon: (<FaGithub size={24} width={20} height={20} />),
-        link: "https://github.com/mKharchi",
-    }, {
+    // Close mobile menu when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setShown(false)
+            }
+        }
 
-        icon: (<FaLinkedin size={24} width={20} height={20} />),
-        link: "https://www.linkedin.com/in/kharchi-merouane-32080a30b/",
-    }, {
+        if (shown) {
+            document.addEventListener('mousedown', handleClickOutside)
+        }
 
-        icon: (<FaWhatsapp size={24} width={20} height={20} />),
-        link: "http://wa.me/+213795736069",
-    },]
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [shown])
+
     return (
-        <div className='w-full flex  flex-col absolute gap-1 top-0 z-50 bg-transparent justify-between items-center py-3 px-4  sm:px-40'>
-
-            <div className="w-full text-secondary text-lg py-1 flex justify-between items-center">
-                <div className='flex   items-center justify-start'>
-                    <span className='w-full flex gap-2 items-center'>
-                        {<BsPinMap width={28} height={28} size={20} />} <span className='hidden sm:min-w-xl sm:flex'>Rua Brás de Assis, 709 - Sala 09 - Botucatu - SP
-                        </span></span>
-                    <span className='w-full gap-2 flex items-center'>
-                        {<BiPhone width={28} height={28} size={20} />}<span className='hidden sm:flex'> (14) 3815-7469
+        <div className='w-full flex flex-col absolute gap-1 top-0 z-50 bg-transparent justify-between items-center py-2 sm:py-3 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40'>
+            {/* Top Bar - Contact Info and Social Links */}
+            <div className="w-full text-secondary text-sm sm:text-base lg:text-lg py-1 flex justify-between items-center">
+                <div className='flex items-center justify-start gap-2 sm:gap-4 lg:gap-6'>
+                    <span className='flex gap-1 sm:gap-2 items-center'>
+                        <BsPinMap className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                        <span className='hidden md:block lg:text-sm xl:text-base'>
+                            Rua Brás de Assis, 709 - Sala 09 - Botucatu - SP
+                        </span>
+                        <span className='block md:hidden text-xs'>
+                            Botucatu - SP
+                        </span>
+                    </span>
+                    <span className='flex gap-1 sm:gap-2 items-center'>
+                        <BiPhone className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                        <span className='hidden sm:block text-sm lg:text-base'>
+                            (14) 3815-7469
                         </span>
                     </span>
                 </div>
-                <div className='flex gap-2 items-center justify-end'>
-
-                    {
-                        links.map((el, index) => {
-                            return (
-                                <a
-                                    key={index}
-                                    href={el.link}
-                                    className=""
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {el.icon}
-                                </a>
-                            )
-                        })
-                    }
+                
+                <div className='flex gap-2 sm:gap-3 items-center justify-end'>
+                    {links.map((el, index) => (
+                        <a
+                            key={index}
+                            href={el.link}
+                            className="hover:opacity-70 transition-opacity duration-200"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {el.icon}
+                        </a>
+                    ))}
                 </div>
             </div>
 
-            <hr className='w-full border border-secondary' />
+            <hr className='w-full border border-secondary opacity-50' />
 
-
-            <div className='w-full py-1  flex justify-between items-center '>
-                <div className='w-1/2 justify-start items-start overflow-hidden h-10 '>
-                    <img src="/Logo.png" alt="Logo" width={1024} height={1024} className='h-12 object-cover sm:h-10 w-30 sm:w-30' />
+            {/* Main Navigation */}
+            <div className='w-full py-1 sm:py-2 flex justify-between items-center relative'>
+                {/* Logo */}
+                <div className='flex justify-start items-center overflow-hidden h-8 sm:h-10 lg:h-12'>
+                    <img 
+                        src="/Logo.png" 
+                        alt="Logo" 
+                        className='h-full w-auto object-contain' 
+                    />
                 </div>
 
-                <div className='hidden lg:flex items-center text-xl gap-8 text-white justify-end w-1/2'>
-                    <NavLink className="hover:opacity-80 transition-all duration-200 ease-in" to="/">HOME</NavLink>
-                    <NavLink className="hover:opacity-80 transition-all duration-200 ease-in" to="/about">ABOUT </NavLink>
-                    <NavLink className="hover:opacity-80 transition-all duration-200 ease-in" to="/houses">HOUSES</NavLink>
+                {/* Desktop Navigation */}
+                <div className='hidden lg:flex items-center text-base xl:text-lg 2xl:text-xl gap-6 xl:gap-8 text-white justify-end'>
+                    <NavLink 
+                        className="hover:opacity-80 transition-all duration-200 ease-in-out font-medium" 
+                        to="/"
+                    >
+                        HOME
+                    </NavLink>
+                    <NavLink 
+                        className="hover:opacity-80 transition-all duration-200 ease-in-out font-medium" 
+                        to="/about"
+                    >
+                        ABOUT
+                    </NavLink>
+                    <NavLink 
+                        className="hover:opacity-80 transition-all duration-200 ease-in-out font-medium" 
+                        to="/houses"
+                    >
+                        HOUSES
+                    </NavLink>
                 </div>
 
-                <div className='flex lg:hidden w-1/2 items-center justify-end gap-4 px-2 text-xl'>
-                    <CiMenuBurger fill='#e0e0e0' onClick={() => setShown(prev => !prev)} />
+                {/* Mobile Menu Button */}
+                <div className='flex lg:hidden items-center justify-end'>
+                    <button
+                        onClick={() => setShown(prev => !prev)}
+                        className="p-2 hover:bg-white hover:bg-opacity-20 rounded-md transition-all duration-200"
+                        aria-label="Toggle menu"
+                    >
+                        <CiMenuBurger className="w-6 h-6 text-secondary" />
+                    </button>
                 </div>
 
+                {/* Mobile Menu Dropdown */}
                 {shown && (
-                    <div className='flex absolute top-20 bg-black rounded-lg px-4 py-2 right-6 flex-col items-end text-lg gap-3 text-white justify-end w-1/3'>
-                        <NavLink className="hover:opacity-80 transition-all duration-200 ease-in" to="/">HOME</NavLink>
-                        <NavLink className="hover:opacity-80 transition-all duration-200 ease-in" to="/about">ABOUT </NavLink>
-                        <NavLink className="hover:opacity-80 transition-all duration-200 ease-in" to="/houses">HOUSES</NavLink>
-
+                    <div 
+                        ref={menuRef}
+                        className='flex absolute top-full right-0 mt-2 bg-black bg-opacity-90 backdrop-blur-sm rounded-lg px-4 py-3 flex-col items-end text-base gap-3 text-white justify-end min-w-32 shadow-lg'
+                    >
+                        <NavLink 
+                            className="hover:opacity-80 transition-all duration-200 ease-in-out font-medium" 
+                            to="/"
+                            onClick={() => setShown(false)}
+                        >
+                            HOME
+                        </NavLink>
+                        <NavLink 
+                            className="hover:opacity-80 transition-all duration-200 ease-in-out font-medium" 
+                            to="/about"
+                            onClick={() => setShown(false)}
+                        >
+                            ABOUT
+                        </NavLink>
+                        <NavLink 
+                            className="hover:opacity-80 transition-all duration-200 ease-in-out font-medium" 
+                            to="/houses"
+                            onClick={() => setShown(false)}
+                        >
+                            HOUSES
+                        </NavLink>
                     </div>
                 )}
             </div>

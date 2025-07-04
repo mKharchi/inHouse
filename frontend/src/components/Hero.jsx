@@ -1,25 +1,46 @@
-import React from "react"
+import React, { useRef } from "react"
 import Navbar from "./Navbar"
-import Carousel from "./Carousel"
+import { gsap } from "gsap"
+import { useGSAP } from "@gsap/react"
 
+gsap.registerPlugin(useGSAP)
 
-const Hero = ({ image, title, description, isContact, isAbout }) => {
+const Hero = ({ image, title, description }) => {
+    const container = useRef()
+
+    useGSAP(() => {
+        gsap.from(".hero-title", {
+            y: 50,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power3.out",
+        })
+       
+    }, { scope: container })
+
     return (
-        <section className='flex flex-col relative items-center gap-8 w-full py-8 2xl:py-16 px-16 2xl:px-4 sm:px-40 justify-center  h-full min-h-[40vh] sm:min-h-[78vh]  ' style={{
-            backgroundImage: `url(${image})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'top',
-        }}>
+        <section
+            ref={container}
+            className='flex flex-col relative items-center gap-4 sm:gap-6 lg:gap-8 w-full py-4 sm:py-6 lg:py-8 xl:py-12 2xl:py-16 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 justify-center min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] xl:min-h-[78vh] bg-center bg-cover bg-no-repeat'
+            style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${image})`,
+            }}
+        >
             <Navbar />
 
-            <div className={`flex text-light gap-2 flex-col text-center w-full items-center justify-center h-full`}>
-                <h1 className={` max-w-[60vw]  text-white text-3xl sm:text-5xl lg:text-6xl xl:text-3xl sm:text-7xl 2xl:text-9xl font-semibold mb-4 w-full`}>{title}</h1>
+            <div className='flex text-center gap-2 sm:gap-4 flex-col w-full items-center justify-center h-full flex-1'>
+                <h1
+                    className='hero-title max-w-[95vw] sm:max-w-[85vw] lg:max-w-[75vw] xl:max-w-[60vw] text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl font-semibold leading-tight'>
+                    {title}
+                </h1>
+
+                {description && (
+                    <p className='hero-desc max-w-[90vw] sm:max-w-[70vw] lg:max-w-[60vw] xl:max-w-[50vw] text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-light leading-relaxed mt-2 sm:mt-4'>
+                        {description}
+                    </p>
+                )}
             </div>
-
-
-
         </section>
-
     )
 }
 

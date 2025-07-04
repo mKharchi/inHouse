@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.10",
     "axios": "^1.10.0",
     "emailjs": "^4.0.3",
+    "gsap": "^3.13.0",
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",

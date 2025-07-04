@@ -3,54 +3,70 @@ import { Link } from 'react-router-dom'
 
 const ProductItem = ({ item }) => {
     return (
-        <div className='flex relative flex-col bg-white min-h-100 sm:min-h-150 pb-2 items-center overflow-hidden justify-between gap-1 rounded-lg w-75 sm:w-100 shadow-xl hover:shadow-none transition-all duration-300 ease-in'>
-
-            <div className='w-full min-w-40 h-40 sm:min-w-42 sm:h-56 object-cover mb sm:mb-2 overflow-hidden'>
-                <img src={item?.image[0] && item?.image[0]} className='hover:scale-110 ease-in transition-all duration-200 w-full h-full object-cover' />
-            </div>
-
-            {/* Name */}
-            <h3 className='text-xl font-semibold text-left px-4 w-full'>{item?.name}</h3>
-
-            {/* Rent or Sale */}
-            <div className='text-sm font-medium text-gray-600 px-4 w-full'>
-                {item.rent ? 'For Rent' : 'For Sale'}
-            </div>
-
-            {/* Address */}
-            <div className='text-xs sm:text-sm text-gray-500 px-4 w-full truncate'>
-                {item.address}
-            </div>
-
-            {/* Rooms, Area, Bathroom */}
-            <div className='flex flex-row items-start sm:items-center justify-center gap-2 w-full sm:px-4 px-4 sm:py-2'>
-                <div className='w-full flex flex-row justify-start px-0  sm:flex-col gap-1 sm:justify-between items-center '>
-                    <span className='font-semibold'>Rooms:</span>
-                    <span>{item.rooms}</span>
-                </div>
-                <div className='w-full flex flex-row justify-center px-0 sm:flex-col gap-1 sm:justify-between items-center '>
-                    <span className='font-semibold'>Area:</span>
-                    <span>{item.area}m²</span>
-                </div>
-                <div className='w-full flex flex-row justify-center px-0 sm:flex-col gap-1 sm:justify-between items-center'>
-                    <span className='font-semibold'>Bathrooms:</span>
-                    <span>{item.bathrooms}</span>
+        <div className='flex flex-col bg-white rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out overflow-hidden w-full max-w-sm mx-auto hover:scale-105'>
+            {/* Image Container */}
+            <div className='w-full h-48 sm:h-56 lg:h-64 overflow-hidden relative'>
+                <img 
+                    src={item?.image[0]} 
+                    alt={item?.name}
+                    className='w-full h-full object-cover transition-transform duration-300 hover:scale-110' 
+                />
+                {/* Rent/Sale Badge */}
+                <div className='absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-full text-xs sm:text-sm font-medium'>
+                    {item.rent ? 'For Rent' : 'For Sale'}
                 </div>
             </div>
 
-            <hr className='border hidden sm:flex opacity-40 w-[88%] mx-auto' />
+            {/* Content Container */}
+            <div className='flex flex-col p-4 sm:p-5 lg:p-6 flex-1'>
+                {/* Property Name */}
+                <h3 className='text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 line-clamp-2'>
+                    {item?.name}
+                </h3>
 
-            {/* Price */}
-            <div className="flex w-full sm:flex-col px-4 justify-start item-center gap-2">
-                <span className='text-center font-semibold '>Price:</span>
-                <span className='sm:text-xl sm:text-center sm:font-semibold'>${item.price}</span>
+                {/* Address */}
+                <p className='text-sm sm:text-base text-gray-600 mb-4 line-clamp-1'>
+                    {item.address}
+                </p>
+
+                {/* Property Details */}
+                <div className='grid grid-cols-3 gap-2 sm:gap-3 mb-4 text-center'>
+                    <div className='flex flex-col items-center p-2 bg-gray-50 rounded-lg'>
+                        <span className='text-xs sm:text-sm font-medium text-gray-500'>Rooms</span>
+                        <span className='text-sm sm:text-base lg:text-lg font-semibold text-gray-900'>
+                            {item.rooms}
+                        </span>
+                    </div>
+                    <div className='flex flex-col items-center p-2 bg-gray-50 rounded-lg'>
+                        <span className='text-xs sm:text-sm font-medium text-gray-500'>Area</span>
+                        <span className='text-sm sm:text-base lg:text-lg font-semibold text-gray-900'>
+                            {item.area}m²
+                        </span>
+                    </div>
+                    <div className='flex flex-col items-center p-2 bg-gray-50 rounded-lg'>
+                        <span className='text-xs sm:text-sm font-medium text-gray-500'>Bathrooms</span>
+                        <span className='text-sm sm:text-base lg:text-lg font-semibold text-gray-900'>
+                            {item.bathrooms}
+                        </span>
+                    </div>
+                </div>
+
+                {/* Price */}
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                    <span className='text-sm sm:text-base text-gray-600 font-medium'>Price:</span>
+                    <span className='text-xl sm:text-2xl lg:text-3xl font-bold text-primary'>
+                        ${item.price?.toLocaleString()}
+                    </span>
+                </div>
+
+                {/* Call to Action Button */}
+                <Link 
+                    to={`/property/${item._id}`} 
+                    className='w-full text-center px-4 py-2 sm:py-3 bg-primary text-white rounded-lg font-semibold text-sm sm:text-base lg:text-lg hover:bg-primary-dark hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105'
+                >
+                    See Details
+                </Link>
             </div>
-
-            {/* Button */}
-            <Link to={`/property/${item._id}`} 
-            className='px-4 sm:text-xl font-semibold mb-4 py-2 sm:w-1/3 mt-2 text-tertiary bg-primary rounded-xl hover:text-primary hover:bg-secondary transition-all duration-300'>
-                See more
-            </Link>
         </div>
     )
 }
