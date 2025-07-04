@@ -41,7 +41,7 @@ const Galery = () => {
     ]
 
     return (
-        <section className='flex min-h-screen  py-6 flex-col w-full items-center justify-center gap-8 px-4 md:px-8 lg:px-16 xl:px-40'>
+        <section className='flex sm:min-h-[80vh]  py-6 flex-col w-full items-center justify-start gap-8 px-4 md:px-8 lg:px-16 xl:px-40'>
             <div ref={containerRef6} className='flex flex-col items-center justify-center gap-3 w-full text-center'>
                 <h1 className='fade-up text-3xl md:text-5xl lg:text-7xl font-bold text-center w-full'>Properties by Region</h1>
                 <p className='fade-up text-base md:text-lg'>Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.</p>
@@ -114,7 +114,7 @@ const About = () => {
     }, [])
 
     return (
-        <div ref={containerRef7} className='w-full mt-36 flex flex-col lg:flex-row items-center justify-center py-8 md:py-16 px-4 md:px-8 lg:px-16 xl:px-40 min-h-screen'>
+        <div ref={containerRef7} className='w-full sm:mt-24 flex flex-col lg:flex-row items-center justify-center py-8 md:py-16 px-4 md:px-8 lg:px-16 xl:px-40 sm:min-h-screen'>
             <div className='w-full flex flex-col-reverse lg:flex-row relative bg-secondary text-light lg:h-[70vh] items-center justify-center gap-4 md:gap-8 lg:gap-10'>
                 <img
                     src="/whoarewe.png"
@@ -275,7 +275,7 @@ const Recommended = ({ sold }) => {
     return (
         <section
             id='recommended'
-            className='flex flex-col items-center justify-start w-full py-8 md:py-16 px-4 md:px-8 xl:px-12 2xl:px-40 gap-8  min-h-screen'
+            className='flex flex-col items-center justify-start w-full py-8 md:py-16 px-4 md:px-8 xl:px-12 2xl:px-40 gap-8 '
         >
             {sold.length > 0 && (
                 <>

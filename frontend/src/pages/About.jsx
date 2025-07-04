@@ -80,7 +80,7 @@ const AboutUs = () => {
   }, [])
 
   return (
-    <div ref={containerRef7} className='w-full mt-36 flex flex-col lg:flex-row items-center justify-center py-8 md:py-16 px-4 md:px-8 lg:px-16 xl:px-40 min-h-screen'>
+    <div ref={containerRef7} className='w-full sm:mt-24 flex flex-col lg:flex-row items-center justify-center py-8 md:py-16 px-4 md:px-8 lg:px-16 xl:px-40 sm:min-h-screen'>
       <div className='w-full flex flex-col-reverse lg:flex-row relative bg-secondary text-light lg:h-[70vh] items-center justify-center gap-4 md:gap-8 lg:gap-10'>
         <img
           src="/whoarewe.png"

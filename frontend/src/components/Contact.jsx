@@ -38,7 +38,7 @@ const ContactForm = () => {
   return (
     <div className='w-full flex flex-col justify-start items-center bg-secondary text-primary'>
       <form 
-        className='rounded-2xl sm:rounded-4xl shadow-2xl p-4 sm:p-6 lg:p-8 w-full max-w-md sm:max-w-lg lg:max-w-2xl bg-white flex flex-col items-center justify-center gap-3 sm:gap-4' 
+        className='rounded-2xl sm:rounded-4xl shadow-2xl p-4 py-6 sm:p-6 lg:p-8 w-full max-w-md sm:max-w-lg lg:max-w-2xl bg-white flex flex-col items-center justify-center gap-4 ' 
         onSubmit={handleSubmit}
       >
         {[
@@ -88,7 +88,7 @@ const Contact = () => {
   ]
   
   return (
-    <div className='w-full min-h-screen lg:min-h-[60vh] flex flex-col lg:flex-row px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 items-center py-8 sm:py-12 lg:py-16 gap-6 lg:gap-8 xl:gap-12'>
+    <div className='w-full sm:min-h-screen lg:min-h-[60vh] flex flex-col lg:flex-row px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 items-center py-8 sm:py-12 lg:py-16 gap-6 lg:gap-8 xl:gap-12'>
       {/* Left Section - Contact Info */}
       <div className='w-full lg:w-1/2 flex flex-col gap-4 sm:gap-6 justify-start items-start'>
         <h2 className='text-lg sm:text-xl lg:text-2xl xl:text-3xl font-light leading-relaxed'>
