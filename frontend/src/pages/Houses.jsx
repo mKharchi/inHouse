@@ -28,21 +28,32 @@ const Collections = () => {
     const applyFilters = () => {
         let productsCopy = products.filter(el => el.status === 'available')
 
-        if (search) {
-            if (search.h_ap) {
+        // Helper function to check if a value is a valid filter (not a placeholder)
+        const isValidFilter = (value) => {
+            if (!value || value.trim() === '') return false
+            const placeholders = ['property type', 'rent/sale', 'location', 'all']
+            return !placeholders.includes(value.toLowerCase())
+        }
+
+        // Only apply filters if search exists and has meaningful values
+        if (search && typeof search === 'object') {
+            // Filter by category only if h_ap is a valid filter value
+            if (isValidFilter(search.h_ap)) {
                 productsCopy = productsCopy.filter(item =>
                     item.category?.toLowerCase() === search.h_ap.toLowerCase()
                 )
             }
 
-            if (search.rent_sell) {
+            // Filter by rent/sell only if rent_sell is a valid filter value
+            if (isValidFilter(search.rent_sell)) {
                 productsCopy = productsCopy.filter(item => {
                     const rentStatus = item.rent ? 'rent' : 'sell'
                     return rentStatus === search.rent_sell.toLowerCase()
                 })
             }
 
-            if (search.location) {
+            // Filter by location only if location is a valid filter value
+            if (isValidFilter(search.location)) {
                 productsCopy = productsCopy.filter(item =>
                     item.location?.toLowerCase() === search.location.toLowerCase()
                 )

@@ -11,9 +11,9 @@ const ShopContextProvider = (props) => {
   const delivery_fee = 10
   const api_url = import.meta.env.VITE_BACKEND_URL
   const [search, setSearch] = useState({
-    h_ap: "House",
-    rent_sell: "sell",
-    location: "",
+    h_ap: 'Property Type',
+    rent_sell: 'Rent/Sale',
+    location: 'Location'
   })
   const [showSearch, setShowSearch] = useState(false)
   const [cartItems, setCartItems] = useState({})
@@ -295,7 +295,7 @@ const ShopContextProvider = (props) => {
       if (response.data.success) {
         console.log(response.data.products);
         setProducts(response.data.products);
-        
+
       } else {
         toast.error(response.data.message)
 
