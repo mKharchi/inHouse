@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const ProductItem = ({ item }) => {
     return (
-        <div className='flex flex-col bg-white rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out overflow-hidden w-full max-w-sm mx-auto hover:scale-105'>
+        <div className='flex flex-col bg-white rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out overflow-hidden w-[300px]  lg:w-[350px] mx-auto hover:scale-105'>
             {/* Image Container */}
             <div className='w-full h-48 sm:h-56 lg:h-64 overflow-hidden relative'>
                 <img 

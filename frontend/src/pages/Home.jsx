@@ -41,7 +41,7 @@ const Galery = () => {
     ]
 
     return (
-        <section className='flex sm:min-h-[80vh]  py-6 flex-col w-full items-center justify-start gap-8 px-4 md:px-8 lg:px-16 xl:px-40'>
+        <section className='flex sm:min-h-[80vh] my-5 lg:mb-20  py-6 flex-col w-full items-center justify-start gap-8 px-4 md:px-8 lg:px-16 xl:px-40'>
             <div ref={containerRef6} className='flex flex-col items-center justify-center gap-3 w-full text-center'>
                 <h1 className='fade-up text-3xl md:text-5xl lg:text-7xl font-bold text-center w-full'>Properties by Region</h1>
                 <p className='fade-up text-base md:text-lg'>Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.</p>
