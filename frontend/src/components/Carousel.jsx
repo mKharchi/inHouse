@@ -81,47 +81,65 @@ const Carousel = () => {
             <Navbar />
 
             <div ref={sliderRef} className="keen-slider w-full h-screen relative">
-                {/* Slide 1 */}
-                <div className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-cover bg-center"
-                    style={{ backgroundImage: "url('carousel1.png')" }}>
-                    <div ref={textContainer1Ref} className=" max-w-7xl w-full space-y-3 md:space-y-4 lg:space-y-6">
-                        <p className="slide-text opacity-0  text-sm sm:text-base md:text-lg lg:text-xl text-tertiary font-medium">COUNT ON VMAF IN 2023</p>
-                        <h1 className="slide-text opacity-0  text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-tertiary leading-tight md:leading-snug lg:leading-normal">
-                            We are committed to providing the best housing at the best price for YOUR FAMILY.
-                        </h1>
-                        <h2 className="slide-text opacity-0  text-base sm:text-lg md:text-xl lg:text-2xl text-tertiary font-medium max-w-3xl">
-                            How we do it: We buy, renovate, and make dreams come true.
-                        </h2>
-                    </div>
-                </div>
+                                {/* Slide 1 */}
+                                <div className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-white relative overflow-hidden">
+                                    <img
+                                        src="carousel1.png"
+                                        alt="Slide 1"
+                                        loading="lazy"
+                                        className="absolute inset-0 w-full h-full object-cover -z-10"
+                                        style={{ pointerEvents: "none" }}
+                                    />
+                                    <div ref={textContainer1Ref} className="max-w-7xl w-full space-y-3 md:space-y-4 lg:space-y-6">
+                                        <p className="slide-text opacity-0  text-sm sm:text-base md:text-lg lg:text-xl text-tertiary font-medium">COUNT ON VMAF IN 2023</p>
+                                        <h1 className="slide-text opacity-0  text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-tertiary leading-tight md:leading-snug lg:leading-normal">
+                                            We are committed to providing the best housing at the best price for YOUR FAMILY.
+                                        </h1>
+                                        <h2 className="slide-text opacity-0  text-base sm:text-lg md:text-xl lg:text-2xl text-tertiary font-medium max-w-3xl">
+                                            How we do it: We buy, renovate, and make dreams come true.
+                                        </h2>
+                                    </div>
+                                </div>
 
-                {/* Slide 2 */}
-                <div ref={textContainer2Ref} className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-cover bg-center"
-                    style={{ backgroundImage: "url('carousel2.png')" }}>
-                    <div className="max-w-7xl w-full space-y-3 md:space-y-4 lg:space-y-6">
-                        <p className="slide-text opacity-0  text-sm sm:text-base md:text-lg lg:text-xl text-tertiary font-medium">YOUR TRUST, OUR RESPONSIBILITY</p>
-                        <h1 className="slide-text opacity-0   text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-tertiary leading-tight md:leading-snug lg:leading-normal">
-                            From purchase to perfection — we handle every step with care and transparency.
-                        </h1>
-                        <h2 className="slide-text opacity-0  text-base sm:text-lg md:text-xl lg:text-2xl text-tertiary font-medium max-w-3xl">
-                            Our mission is simple: turning properties into warm, welcoming homes for families like yours.
-                        </h2>
-                    </div>
-                </div>
+                                {/* Slide 2 */}
+                                <div ref={textContainer2Ref} className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-white relative overflow-hidden">
+                                    <img
+                                        src="carousel2.png"
+                                        alt="Slide 2"
+                                        loading="lazy"
+                                        className="absolute inset-0 w-full h-full object-cover -z-10"
+                                        style={{ pointerEvents: "none" }}
+                                    />
+                                    <div className="max-w-7xl w-full space-y-3 md:space-y-4 lg:space-y-6">
+                                        <p className="slide-text opacity-0  text-sm sm:text-base md:text-lg lg:text-xl text-tertiary font-medium">YOUR TRUST, OUR RESPONSIBILITY</p>
+                                        <h1 className="slide-text opacity-0   text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-tertiary leading-tight md:leading-snug lg:leading-normal">
+                                            From purchase to perfection — we handle every step with care and transparency.
+                                        </h1>
+                                        <h2 className="slide-text opacity-0  text-base sm:text-lg md:text-xl lg:text-2xl text-tertiary font-medium max-w-3xl">
+                                            Our mission is simple: turning properties into warm, welcoming homes for families like yours.
+                                        </h2>
+                                    </div>
+                                </div>
 
-                {/* Slide 3 */}
-                <div ref={textContainer3Ref} className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-cover bg-center"
-                    style={{ backgroundImage: "url('carousel3.png')" }}>
-                    <div className="max-w-7xl w-full space-y-3 md:space-y-4 lg:space-y-6">
-                        <p className="slide-text opacity-0  text-sm sm:text-base md:text-lg lg:text-xl text-tertiary font-medium">BUILDING TOMORROW TOGETHER</p>
-                        <h1 className="slide-text opacity-0  text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-tertiary leading-tight md:leading-snug lg:leading-normal">
-                            Join us in shaping a better future — one home, one family, one dream at a time.
-                        </h1>
-                        <h2 className="slide-text opacity-0  text-base sm:text-lg md:text-xl lg:text-2xl text-tertiary font-medium max-w-3xl">
-                            VMAF is more than housing. It's a vision for affordable living and sustainable communities.
-                        </h2>
-                    </div>
-                </div>
+                                {/* Slide 3 */}
+                                <div ref={textContainer3Ref} className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-white relative overflow-hidden">
+                                    <img
+                                        src="carousel3.png"
+                                        alt="Slide 3"
+                                        loading="lazy"
+                                        className="absolute inset-0 w-full h-full object-cover -z-10"
+                                        style={{ pointerEvents: "none" }}
+                                    />
+                                    <div className="max-w-7xl w-full space-y-3 md:space-y-4 lg:space-y-6">
+                                        <p className="slide-text opacity-0  text-sm sm:text-base md:text-lg lg:text-xl text-tertiary font-medium">BUILDING TOMORROW TOGETHER</p>
+                                        <h1 className="slide-text opacity-0  text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-tertiary leading-tight md:leading-snug lg:leading-normal">
+                                            Join us in shaping a better future — one home, one family, one dream at a time.
+                                        </h1>
+                                        <h2 className="slide-text opacity-0  text-base sm:text-lg md:text-xl lg:text-2xl text-tertiary font-medium max-w-3xl">
+                                            VMAF is more than housing. It's a vision for affordable living and sustainable communities.
+                                        </h2>
+                                    </div>
+                                </div>
 
                 {/* Navigation Arrows */}
                 {loaded && (
