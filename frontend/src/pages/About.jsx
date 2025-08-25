@@ -117,7 +117,7 @@ const About = () => {
   return (
     <div className='min-h-screen w-full flex flex-col justify-start items-center'>
       <Hero
-        image={"aboutImg.png"}
+        image={"/aboutImg.png"}
         title={"VMAF Real Estate"}
         description={""}
       />

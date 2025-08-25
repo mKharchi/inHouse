@@ -21,11 +21,19 @@ const Hero = ({ image, title, description }) => {
     return (
         <section
             ref={container}
-            className='flex flex-col relative items-center gap-4 sm:gap-6 lg:gap-8 w-full py-4 sm:py-6 lg:py-8 xl:py-12 2xl:py-16 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 justify-center min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] xl:min-h-[78vh] bg-center bg-cover bg-no-repeat'
-            style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${image})`,
-            }}
+            className='flex flex-col relative items-center gap-4 sm:gap-6 lg:gap-8 w-full py-4 sm:py-6 lg:py-8 xl:py-12 2xl:py-16 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 justify-center min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] xl:min-h-[78vh] bg-center bg-cover bg-no-repeat overflow-hidden'
         >
+            {/* Background image with lazy loading */}
+            <img
+                src={image}
+                alt="Hero background"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover z-0"
+                style={{ pointerEvents: "none" }}
+            />
+            {/* Overlay for gradient effect */}
+            <div className="absolute inset-0 bg-black opacity-80 z-0" />
+
             <Navbar />
 
             <div className='flex text-center gap-2 sm:gap-4 flex-col w-full items-center justify-center h-full flex-1'>
