@@ -10,16 +10,18 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 15000); // 15 seconds
-    return () => clearTimeout(timer);
+    }, 20000); // 20 seconds
+    return () => {
+      clearTimeout(timer);
+ 
+    };
   }, []);
 
   if (loading) {
-    return <Loader />;
+    return <Loader  />;
   }
 
   return (

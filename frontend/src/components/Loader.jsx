@@ -4,6 +4,7 @@ const Loader = () => {
   return (
     <div style={{
       display: "flex",
+      flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
       height: "100vh",
@@ -14,6 +15,7 @@ const Loader = () => {
       width: "100vw",
       zIndex: 9999
     }}>
+      <h1 className="text-4xl text-gray-700 w-full text-center" style={{ marginBottom: "24px" }}>in-house</h1>
       <div style={{
         border: "8px solid #f3f3f3",
         borderTop: "8px solid #3498db",
