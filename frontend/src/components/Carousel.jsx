@@ -82,7 +82,7 @@ const Carousel = () => {
 
             <div ref={sliderRef} className="keen-slider w-full h-screen relative">
                                 {/* Slide 1 */}
-                                <div className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-white relative overflow-hidden">
+                                <div className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-black relative overflow-hidden">
                                     <img
                                         src="carousel1.png"
                                         alt="Slide 1"
@@ -102,7 +102,7 @@ const Carousel = () => {
                                 </div>
 
                                 {/* Slide 2 */}
-                                <div ref={textContainer2Ref} className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-white relative overflow-hidden">
+                                <div ref={textContainer2Ref} className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-black relative overflow-hidden">
                                     <img
                                         src="carousel2.png"
                                         alt="Slide 2"
@@ -122,7 +122,7 @@ const Carousel = () => {
                                 </div>
 
                                 {/* Slide 3 */}
-                                <div ref={textContainer3Ref} className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-white relative overflow-hidden">
+                                <div ref={textContainer3Ref} className="keen-slider__slide flex flex-col gap-3 md:gap-4 lg:gap-6 items-start justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 h-full bg-black relative overflow-hidden">
                                     <img
                                         src="carousel3.png"
                                         alt="Slide 3"
@@ -169,7 +169,7 @@ const Carousel = () => {
                         <button
                             key={idx}
                             onClick={() => slider.current?.moveToIdx(idx)}
-                            className={`w-3 h-3 rounded-full transition-all ${currentSlide === idx ? "bg-tertiary w-6" : "bg-white bg-opacity-50"}`}
+                            className={`w-3 h-3 rounded-full transition-all ${currentSlide === idx ? "bg-tertiary w-6" : "bg-black bg-opacity-50"}`}
                             aria-label={`Go to slide ${idx + 1}`}
                         />
                     ))}
