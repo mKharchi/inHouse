@@ -74,7 +74,7 @@ const Carousel = () => {
 
     return (
         <div
-            className="relative w-full min-h-screen bg-white flex flex-col items-center justify-center"
+            className="relative w-full min-h-screen bg-black flex flex-col items-center justify-center"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >

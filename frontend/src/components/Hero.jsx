@@ -21,7 +21,7 @@ const Hero = ({ image, title, description }) => {
     return (
         <section
             ref={container}
-            className='flex flex-col relative items-center gap-4 sm:gap-6 lg:gap-8 w-full py-4 sm:py-6 lg:py-8 xl:py-12 2xl:py-16 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 justify-center min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] xl:min-h-[78vh] bg-center bg-cover bg-no-repeat overflow-hidden'
+            className='flex flex-col bg-black relative items-center gap-4 sm:gap-6 lg:gap-8 w-full py-4 sm:py-6 lg:py-8 xl:py-12 2xl:py-16 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 justify-center min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] xl:min-h-[78vh] bg-center bg-cover bg-no-repeat overflow-hidden'
         >
             {/* Background image with lazy loading */}
             <img
